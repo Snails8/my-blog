@@ -1,3 +1,5 @@
+import type { GatsbyConfig } from "gatsby"
+
 /**
  * Configure your Gatsby site with this file.
  *
@@ -7,7 +9,7 @@
 /**
  * @type {import('gatsby').GatsbyConfig}
  */
-module.exports = {
+const config: GatsbyConfig = {
   siteMetadata: {
     title: `Gatsby Starter Blog`,
     author: {
@@ -123,3 +125,5 @@ module.exports = {
     },
   ],
 }
+
+export default config
