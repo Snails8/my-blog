@@ -14,7 +14,7 @@ const blogPost = path.resolve(`./src/templates/blog-post.js`)
 /**
  * @type {import('gatsby').GatsbyNode['createPages']}
  */
-export const createPages = async ({ graphql, actions, reporter }) => {
+export const createPages: GatsbyNode["createPages"] = async ({ graphql, actions, reporter }) => {
   const { createPage } = actions
 
   // Get all markdown blog posts sorted by date
@@ -46,7 +46,7 @@ export const createPages = async ({ graphql, actions, reporter }) => {
   // `context` is available in the template as a prop and as a variable in GraphQL
 
   if (posts.length > 0) {
-    posts.forEach((post, index) => {
+    posts.forEach((post: any, index: number) => {
       const previousPostId = index === 0 ? null : posts[index - 1].id
       const nextPostId = index === posts.length - 1 ? null : posts[index + 1].id
 
@@ -66,7 +66,7 @@ export const createPages = async ({ graphql, actions, reporter }) => {
 /**
  * @type {import('gatsby').GatsbyNode['onCreateNode']}
  */
-export const onCreateNode = ({ node, actions, getNode }) => {
+export const onCreateNode: GatsbyNode["onCreateNode"] = ({ node, actions, getNode }) => {
   const { createNodeField } = actions
 
   if (node.internal.type === `MarkdownRemark`) {
@@ -83,7 +83,7 @@ export const onCreateNode = ({ node, actions, getNode }) => {
 /**
  * @type {import('gatsby').GatsbyNode['createSchemaCustomization']}
  */
-export const createSchemaCustomization = ({ actions }) => {
+export const createSchemaCustomization: GatsbyNode["createSchemaCustomization"] = ({ actions }) => {
   const { createTypes } = actions
 
   // Explicitly define the siteMetadata {} object

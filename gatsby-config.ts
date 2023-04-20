@@ -77,13 +77,13 @@ const config: GatsbyConfig = {
         `,
         feeds: [
           {
-            serialize: ({ query: { site, allMarkdownRemark } }) => {
+            serialize: ({ query: { site, allMarkdownRemark } }: {query:{site:GatsbyTypes.Query['site'],allMarkdownRemark:GatsbyTypes.Query["allMarkdownRemark"]}} ) => {
               return allMarkdownRemark.nodes.map(node => {
                 return Object.assign({}, node.frontmatter, {
                   description: node.excerpt,
-                  date: node.frontmatter.date,
-                  url: site.siteMetadata.siteUrl + node.fields.slug,
-                  guid: site.siteMetadata.siteUrl + node.fields.slug,
+                  date: node.frontmatter?.date,
+                  url: site?.siteMetadata?.siteUrl! + node.fields?.slug,
+                  guid: site?.siteMetadata?.siteUrl! + node.fields?.slug,
                   custom_elements: [{ "content:encoded": node.html }],
                 })
               })
@@ -122,6 +122,18 @@ const config: GatsbyConfig = {
         display: `minimal-ui`,
         icon: `src/images/gatsby-icon.png`, // This path is relative to the root of the site.
       },
+    },
+    {
+      resolve: "gatsby-plugin-typegen",
+      options: {
+        emitSchema: {
+          "src/__generated__/gatsby-schema.graphql": true,
+          "src/__generated__/gatsby-introspection.json": true
+        },
+        emitPluginDocuments: {
+          "src/__generated__/gatsby-plugin-documents.graphql": true
+        }
+      }
     },
   ],
 }
