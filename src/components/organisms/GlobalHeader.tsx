@@ -23,8 +23,8 @@ const Header = ({ location }: Props) => {
   }
 
   return (
-    <header className='bg-gray-800 text-white flex justify-between item-center px-4 py-3'>
-      <div className='text-x1 font-bold'>{siteName}</div>
+    <header className='bg-gray-800 text-white flex justify-between item-center px-10 py-7 text-xl'>
+      <h1 className='text-x1 font-bold'>{siteName}</h1>
       <nav>
         <ul className='flex space-x-4'>
           <li>
