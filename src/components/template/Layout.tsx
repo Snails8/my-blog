@@ -1,7 +1,7 @@
 import * as React from "react"
 import { WindowLocation } from "@reach/router"
-import Header from "./header";
-import Footer from "./footer";
+import Header from "../organisms/GlobalHeader";
+import Footer from "../organisms/GlobalFooter";
 
 type Props = Readonly<{
   location: WindowLocation;

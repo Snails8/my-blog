@@ -1,7 +1,7 @@
 import React, { ReactNode } from 'react';
 import { Link } from "gatsby";
 import { WindowLocation } from "@reach/router"
-import siteMetadata from "../../gatsby-config";
+import siteMetadata from "../../../gatsby-config";
 
 type Props = {
   location: WindowLocation,

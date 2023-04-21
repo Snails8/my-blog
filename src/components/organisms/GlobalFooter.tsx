@@ -1,6 +1,6 @@
 import * as React from "react"
 import { ReactNode } from "react"
-import siteMetadata from "../../gatsby-config"
+import siteMetadata from "../../../gatsby-config"
 
 const Footer = () => {
   return (
