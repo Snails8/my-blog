@@ -1,6 +1,7 @@
 import * as React from "react"
 import { WindowLocation } from "@reach/router"
 import Header from "./header";
+import Footer from "./footer";
 
 type Props = Readonly<{
   location: WindowLocation;
@@ -16,11 +17,7 @@ const Layout = ({ location, title, children }: Props) => {
     <div className="global-wrapper" data-is-root-path={isRootPath}>
       <Header location={location} />
       <main>{children}</main>
-      <footer>
-        © {new Date().getFullYear()}, Built with
-        {` `}
-        <a href="https://www.gatsbyjs.com">Gatsby</a>
-      </footer>
+      <Footer />
     </div>
   )
 }
