@@ -23,10 +23,10 @@ const Header = ({ location }: Props) => {
   }
 
   return (
-    <header>
-      {siteName}
+    <header className='bg-gray-800 text-white flex justify-between item-center px-4 py-3'>
+      <div className='text-x1 font-bold'>{siteName}</div>
       <nav>
-        <ul>
+        <ul className='flex space-x-4'>
           <li>
             <Link to="/blogs/">ブログ</Link>
           </li>

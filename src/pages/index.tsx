@@ -25,6 +25,7 @@ const BlogIndex = ({ data, location }: PageProps<GatsbyTypes.Query>) => {
   return (
     <Layout location={location} title={siteTitle}>
       <Bio />
+      <h1 className="text-3xl font-bold underline">test tailwind</h1>
       <ol style={{ listStyle: `none` }}>
         {posts.map(post => {
           const title = post?.frontmatter?.title || post?.fields?.slug
