@@ -9,9 +9,8 @@
     Times, serif;
   --font-body: var(--fontFamily-serif);
   --font-heading: var(--fontFamily-sans);
+  background-color: #1f2937;
 }
-
-
 /* Media queries */
 
 @media (max-width: 42rem) {
