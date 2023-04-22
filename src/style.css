@@ -10,6 +10,8 @@
   --font-body: var(--fontFamily-serif);
   --font-heading: var(--fontFamily-sans);
   background-color: #1f2937;
+  color: white;
+  font-size: 17px;
 }
 /* Media queries */
 
