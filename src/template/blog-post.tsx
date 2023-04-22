@@ -27,7 +27,7 @@ const BlogPostTemplate = ({
           itemProp="articleBody"
         />
         <hr />
-        <footer>
+        <footer className="mt-auto">
           <Bio />
         </footer>
       </article>
