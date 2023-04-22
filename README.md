@@ -12,6 +12,24 @@ Kick off your project with this blog boilerplate. This starter ships with the ma
 
 _Have another more specific idea? You may want to check out our vibrant collection of [official and community-created starters](https://www.gatsbyjs.com/docs/gatsby-starters/)._
 
+## cmd
+
+run server
+```
+make up
+```
+
+create post 
+```
+make post N=sample
+```
+
+delete post
+```
+make rm N=sample
+```
+
+
 ## 🚀 Quick start
 
 1.  **Create a Gatsby site.**
