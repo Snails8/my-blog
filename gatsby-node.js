@@ -4,7 +4,7 @@ const { createFilePath } = require(`gatsby-source-filesystem`)
 /**
  * @type {import('gatsby').GatsbyNode['createPages']}
  */
-const createEntryPages = async ( graphql, actions, reporter ) => {
+exports.createPages = async ({ graphql, actions, reporter }) => {
   const { createPage } = actions
   const blogPost = path.resolve(`./src/template/blog-post.tsx`)
   
@@ -50,9 +50,9 @@ const createEntryPages = async ( graphql, actions, reporter ) => {
   }
 }
 
-exports.createPages = async ({ graphql, actions }) => {
-  await createEntryPages(graphql, actions)
-}
+// exports.createPages = async ({ graphql, actions }) => {
+//   await createEntryPages(graphql, actions)
+// }
 
 
 /**
