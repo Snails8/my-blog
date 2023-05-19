@@ -1,5 +1,6 @@
 
 up:
+	nodebrew use 18.0.0
 	gatsby develop
 
 # create post cmd
