@@ -1,15 +1,7 @@
-import type { GatsbyConfig } from "gatsby"
-
-/**
- * Configure your Gatsby site with this file.
- *
- * See: https://www.gatsbyjs.com/docs/reference/config-files/gatsby-config/
- */
-
 /**
  * @type {import('gatsby').GatsbyConfig}
  */
-const config: GatsbyConfig = {
+module.exports = {
   siteMetadata: {
     title: `Gatsby Starter Blog`,
     author: {
@@ -78,13 +70,13 @@ const config: GatsbyConfig = {
         `,
         feeds: [
           {
-            serialize: ({ query: { site, allMarkdownRemark } }: {query:{site:GatsbyTypes.Query['site'],allMarkdownRemark:GatsbyTypes.Query["allMarkdownRemark"]}} ) => {
+            serialize: ({ query: { site, allMarkdownRemark } } ) => {
               return allMarkdownRemark.nodes.map(node => {
                 return Object.assign({}, node.frontmatter, {
                   description: node.excerpt,
-                  date: node.frontmatter?.date,
-                  url: site?.siteMetadata?.siteUrl! + node.fields?.slug,
-                  guid: site?.siteMetadata?.siteUrl! + node.fields?.slug,
+                  date: node.frontmatter.date,
+                  url: site.siteMetadata.siteUrl + node.fields.slug,
+                  guid: site.siteMetadata.siteUrl + node.fields.slug,
                   custom_elements: [{ "content:encoded": node.html }],
                 })
               })
@@ -138,5 +130,3 @@ const config: GatsbyConfig = {
     },
   ],
 }
-
-export default config
