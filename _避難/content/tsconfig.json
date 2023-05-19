@@ -8,5 +8,5 @@
     "allowSyntheticDefaultImports": true,
     "moduleResolution": "node"
   },
-  "include": ["src/**/*.ts", "src/**/*.tsx"]
+  "include": ["_避難/src/**/*.ts", "_避難/src/**/*.tsx"]
 }
