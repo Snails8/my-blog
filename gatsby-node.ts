@@ -11,6 +11,17 @@ import { createFilePath } from "gatsby-source-filesystem"
 // Define the template for blog post
 const blogPost = path.resolve(`./src/template/blog-post.tsx`)
 
+interface QueryResult {
+  allMarkdownRemark: {
+    nodes: {
+      id: string;
+      fields: {
+        slug: string;
+      };
+    }[];
+  };
+}
+
 /**
  * @type {import('gatsby').GatsbyNode['createPages']}
  */
@@ -31,15 +42,15 @@ export const createPages: GatsbyNode["createPages"] = async ({ graphql, actions,
     }
   `)
 
-  if (result.errors) {
+  if (result.errors || !result.data) {
     reporter.panicOnBuild(
       `There was an error loading your blog posts`,
       result.errors
     )
     return
   }
-
-  const posts = result.data.allMarkdownRemark.nodes
+  const queryResult = result.data as QueryResult
+  const posts = queryResult.allMarkdownRemark.nodes
 
   // Create blog posts pages
   // But only if there's at least one markdown file found at "content/blog" (defined in gatsby-config.js)
