@@ -1,12 +1,12 @@
-import Container from './container'
+import Container from '../container'
 import cn from 'classnames'
-import { EXAMPLE_PATH } from '../lib/constants'
+import { EXAMPLE_PATH } from '../../lib/constants'
 
 type Props = {
   preview?: boolean
 }
 
-const Alert = ({ preview }: Props) => {
+const GlobalHeader = ({ preview }: Props) => {
   return (
     <div
       className={cn('border-b', {
@@ -15,6 +15,9 @@ const Alert = ({ preview }: Props) => {
       })}
     >
       <Container>
+        <h2 className='justify-start items-center '>
+          aaa
+        </h2>
         <div className="py-2 text-center text-sm">
           {preview ? (
             <>
@@ -45,4 +48,4 @@ const Alert = ({ preview }: Props) => {
   )
 }
 
-export default Alert
+export default GlobalHeader
