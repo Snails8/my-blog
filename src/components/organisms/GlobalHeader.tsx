@@ -2,6 +2,7 @@ import { useState } from 'react'
 import { Dialog } from '@headlessui/react'
 import { Bars3Icon, XMarkIcon } from '@heroicons/react/24/outline'
 import { Home, Products, Profile, Posts } from '../../router'
+import { useRouter } from 'next/router'
 
 const navigation = [
   { name: 'Home', href: Home },
@@ -14,14 +15,17 @@ const GlobalHeader = () => {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
   const blogName = "Snail's Blog"
 
+  const router = useRouter();
+  const handleClick = () => {
+    router.push(Home);
+  }
+
   return (
     <header className="bg-gray-900">
       <nav className="mx-auto flex max-w-7xl items-center justify-between p-6 lg:px-8" aria-label="Global">
-        <div className="flex lg:flex-1 items-center">
-          <a href="#" className="-m-1.5 p-1.5">
-            <span className="sr-only">{blogName}</span>
-            <img className="h-8 w-auto" src="https://tailwindui.com/img/logos/mark.svg?color=indigo&shade=500" alt="" />
-          </a>
+        <div className="flex lg:flex-1 items-center hover:bg-gray-800 cursor-pointer" onClick={() => handleClick()}>
+          <span className="sr-only">{blogName}</span>
+          <img className="h-8 w-auto" src="https://tailwindui.com/img/logos/mark.svg?color=indigo&shade=500" alt="" />
           <h1 className='font-semibold leading-6 text-white item-center ml-2'>{blogName}</h1>
         </div>
         <div className="flex lg:hidden">
