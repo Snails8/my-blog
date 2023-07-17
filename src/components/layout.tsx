@@ -1,4 +1,4 @@
-import GlobalHeader from '../components/organisms/GlobalHeader';
+import GlobalHeader from './organisms/GlobalHeader';
 import Footer from './footer'
 import Meta from './meta'
 
