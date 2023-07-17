@@ -1,12 +1,13 @@
 import { useState } from 'react'
 import { Dialog } from '@headlessui/react'
 import { Bars3Icon, XMarkIcon } from '@heroicons/react/24/outline'
+import { Home, Products, Profile, Posts } from '../../router'
 
 const navigation = [
-  { name: 'Home', href: '/' },
-  { name: 'Posts', href: '/posts' },
-  { name: 'Product', href: '/products' },
-  { name: 'Profile', href: '/profile' },
+  { name: 'Home', href: Home },
+  { name: 'Posts', href: Posts },
+  { name: 'Product', href: Products },
+  { name: 'Profile', href: Profile },
 ]
 
 const GlobalHeader = () => {

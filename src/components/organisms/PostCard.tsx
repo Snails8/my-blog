@@ -1,5 +1,6 @@
 import { FC } from "react"
 import Post from '../../interfaces/post';
+import { PostDetail } from "../../router";
 
 type Props = {
   posts: Post[]
@@ -40,7 +41,7 @@ export const PostCard: FC<Props> = ({ ...props }) => {
                 </div>
                 <div className="group relative">
                   <h3 className="mt-3 text-lg font-semibold leading-6 text-gray-900 group-hover:text-gray-600">
-                    <a href={post.slug}>
+                    <a href={PostDetail(post.slug)}>
                       <span className="absolute inset-0" />
                       {post.title}
                     </a>
