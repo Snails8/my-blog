@@ -1,8 +1,9 @@
+'use client'
 import { useState } from 'react'
 import { Dialog } from '@headlessui/react'
 import { Bars3Icon, XMarkIcon } from '@heroicons/react/24/outline'
-import { Home, Products, Profile, Posts } from '../../router'
-import { useRouter } from 'next/router'
+import { Home, Products, Profile, Posts } from '../../../router'
+import { useRouter } from 'next/navigation'
 
 const navigation = [
   { name: 'Home', href: Home },

@@ -1,3 +1,4 @@
+'use client'
 import { FC } from "react"
 import Post from '../../interfaces/post';
 import { PostDetail } from "../../router";

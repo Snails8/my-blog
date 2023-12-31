@@ -1,4 +1,4 @@
-import { Github, Home, Posts, Products, Profile, Twitter } from "../../router"
+import { Github, Home, Posts, Products, Profile, Twitter } from "../../../router"
 
 const navigation = {
   main: [
