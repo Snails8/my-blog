@@ -8,11 +8,11 @@ import { PostCard } from '@/components/domain/PostCard'
 
 export default async function Index() {
   const allPosts = await getProps() as unknown as Post[]
-  const morePosts = allPosts.slice(1)
+
   
   return (
     <Container>
-      {morePosts.length > 0 && <PostCard posts={morePosts} />}
+      {allPosts.length > 0 && <PostCard posts={allPosts} />}
     </Container>
   )
 }
