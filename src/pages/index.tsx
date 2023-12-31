@@ -1,10 +1,10 @@
-import Container from '../components/container'
-import Layout from '../components/layout'
+import Container from '../components/layout/container'
+import Layout from '../components/layout/layout'
 import { getAllPosts } from '../lib/api'
 import Head from 'next/head'
 import { CMS_NAME } from '../lib/constants'
 import Post from '../interfaces/post'
-import { PostCard } from '../components/organisms/PostCard'
+import { PostCard } from '../components/domain/PostCard'
 
 type Props = {
   allPosts: Post[]

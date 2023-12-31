@@ -1,7 +1,7 @@
-import GlobalHeader from './organisms/GlobalHeader';
-import Footer from './organisms/unuse-default-component/footer'
+import GlobalHeader from '../domain/GlobalHeader';
+import Footer from '../domain/unuse-default-component/footer'
 import Meta from './meta'
-import { GlobalFooter } from './organisms/GlobalFooter';
+import { GlobalFooter } from '../domain/GlobalFooter';
 
 type Props = {
   children: React.ReactNode
