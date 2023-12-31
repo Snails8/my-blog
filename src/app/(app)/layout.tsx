@@ -1,4 +1,3 @@
-'use client'
 import GlobalLayout from "@/components/layout/GlobalLayout/layout"
 
 export default function AppLayout({
