@@ -21,18 +21,20 @@ export default async function Post({ params }: { params: { slug: string }}) {
   return (
     <>
       <Container>
-        <article className="mb-32">
-          <Head>
-            <title>{title}</title>
-            <meta property="og:image" content={post.ogImage?.url} />
-          </Head>
-          <PostHeader
-            title={post.title}
-            coverImage={post.coverImage}
-            date={post.date}
-          />
-          <PostBody content={post.content} />
-        </article>
+        <div className='flex justify-center mb-32 '>
+          <article className="prose prose-xl">
+            <Head>
+              <title>{title}</title>
+              <meta property="og:image" content={post.ogImage?.url} />
+            </Head>
+            <PostHeader
+              title={post.title}
+              coverImage={post.coverImage}
+              date={post.date}
+            />
+            <PostBody content={post.content} />
+          </article>
+        </div>
       </Container>
     </>
   )
@@ -52,7 +54,6 @@ async function getProps({ params }: Params) {
     'author',
     'content',
     'ogImage',
-    'coverImage',
   ])
   const content = await markdownToHtml(post.content || '')
 
