@@ -1,5 +1,5 @@
 'use client'
-import GlobalHeader from './GlobalHeader';
+import { GlobalHeader } from './GlobalHeader';
 import Meta from '../meta'
 import { GlobalFooter } from './GlobalFooter';
 
