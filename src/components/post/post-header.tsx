@@ -1,7 +1,4 @@
-import Avatar from '../elements/avatar'
 import DateFormatter from '../elements/date-formatter'
-import CoverImage from '../elements/cover-image'
-import PostTitle from './post-title'
 
 type Props = {
   title: string
@@ -11,17 +8,16 @@ type Props = {
 
 const PostHeader = ({ title, coverImage, date }: Props) => {
   return (
-    <>
-      <PostTitle>{title}</PostTitle>
-      <div className="mb-8 md:mb-16 sm:mx-0">
-        <CoverImage title={title} src={coverImage} />
-      </div>
+    <section className='max-w-2xl mx-auto'>
+      <h1 className="text-xl md:text-2xl lg:text-3xl font-bold tracking-tighter leading-tight md:leading-none m-12 text-center md:text-left">
+        {title}
+      </h1>
       <div className="max-w-2xl mx-auto">
         <div className="mb-6 text-lg">
           <DateFormatter dateString={date} />
         </div>
       </div>
-    </>
+    </section>
   )
 }
 
